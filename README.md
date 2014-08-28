@@ -21,6 +21,21 @@ The following versions of PHP are supported.
 * PHP 5.6
 * HHVM
 
+## Servers/Providers included
+
+* OAuth 1.0
+  * Bitbucket
+  * Tumblr
+  * Twitter
+* OAuth 2.0
+  * Eventbrite
+  * Facebook
+  * Github
+  * Google
+  * Instagram
+  * LinkedIn
+  * Microsoft
+
 ## Package Installation
 
 Add the following line to your composer.json file:
