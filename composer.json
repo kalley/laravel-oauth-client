@@ -1,0 +1,27 @@
+{
+    "name": "kalley/laravel-oauth-client",
+    "description": "OAuth 1.0 and 2.0 Client for Laravel",
+    "keywords": ["laravel","illuminate","oauth","client"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kalley",
+            "email": "kalley.powell@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "league/oauth2-client": "~0.3",
+        "league/oauth1-client": "~1.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Kalley\\LaravelOauthClient\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
