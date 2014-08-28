@@ -67,7 +67,6 @@ class MigrationCommand extends Command
      */
     public function fire()
     {
-        $app = app();
         // Prepare variables
         $table = lcfirst($this->option('table'));
 
