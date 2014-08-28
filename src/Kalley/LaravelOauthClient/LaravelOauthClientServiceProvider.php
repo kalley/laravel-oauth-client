@@ -43,9 +43,10 @@ class LaravelOauthClientServiceProvider extends ServiceProvider {
 	}
 
 	public function registerCommands() {
-  	$this->app->bind('command.laravel-oauth-client.migration', function ($app) {
+  	$this->app->bindShared('command.oauth-client.migration', function ($app) {
       return new MigrationCommand($app);
     });
+    $this->commands('command.oauth-client.migration');
 	}
 
 	/**

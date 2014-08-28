@@ -9,9 +9,10 @@
  * @link      https://github.com/kalley\laravel-bigcommerce
  */
 
-namespace Kalley\LaravelOauthClient;\Console;
+namespace Kalley\LaravelOauthClient\Console;
 
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputOption;
 
 class MigrationCommand extends Command
 {
