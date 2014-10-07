@@ -13,6 +13,10 @@ class OAuth2Client extends AbstractOAuthClient {
     'microsoft'  => 'Microsoft',
   ];
 
+  public function authorize() {
+    return \Redirect::to($this->getAuthorizationUrl());
+  }
+
   public function getAccessToken($code) {
     $params = ['code' => $code];
     if ( $this->providerName === 'eventbrite' ) {
