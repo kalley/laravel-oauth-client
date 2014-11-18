@@ -1,6 +1,7 @@
 <?php namespace Kalley\LaravelOauthClient;
 
 use \Input;
+use League\OAuth2\Client\Token\AccessToken;
 
 abstract class AbstractOAuthClient {
 
@@ -27,6 +28,10 @@ abstract class AbstractOAuthClient {
   }
 
   abstract public function getAccessToken($code);
+  
+  public function setAccessToken(AccessToken $token) {
+    $this->token = $token;
+  }
 
   public function getUserDetails() {
     if ( ! $this->token ) {
