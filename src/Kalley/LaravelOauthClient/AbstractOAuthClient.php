@@ -23,7 +23,7 @@ abstract class AbstractOAuthClient {
 
   public function __construct($providerName, $config) {
     $this->providerName = strtolower($providerName);
-    $providerClass = $this->namespace . $this->mapped[$this->providerName];
+    $providerClass = $this->namespace . (isset($this->mapped[$this->providerName]) ? $this->mapped[$this->providerName] : $this->providerName);
     $this->provider = new $providerClass($config);
   }
 
