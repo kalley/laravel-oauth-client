@@ -40,12 +40,14 @@ return [
   |   'oauth1server' => [
   |     'identifier' => 'your-identifier',
   |     'secret' => 'your-secret',
-  |     'callback_uri' => 'http://your-callback-uri/'
+  |     'callback_uri' => 'http://your-callback-uri/',
+  |     'providerClass' => '{Namespace}\{Class}' // this is required when using a custom provider
   |   ],
   |   'oauth2provider' => [
   |     'clientId'  =>  'XXXXXXXX',
   |     'clientSecret'  =>  'XXXXXXXX',
-  |     'redirectUri'   =>  'https://your-registered-redirect-uri/'
+  |     'redirectUri'   =>  'https://your-registered-redirect-uri/',
+  |     'providerClass' => '{Namespace}\{Class}' // this is required when using a custom provider
   |   ]
   | ]
   |
