@@ -11,24 +11,21 @@ abstract class AbstractOAuthClient {
 
   public static function factory($providerName, $config) {
     $providerName = strtolower($providerName);
-    switch ( $providerName ) {
-      case 'twitter':
-      case 'bitbucket':
-      case 'tumblr':
-        return new OAuth1Client($providerName, $config);
-      default:
-        return new OAuth2Client($providerName, $config);
+    if (array_key_exists('identifier', $config)) {
+      return new OAuth1Client($providerName, $config);
+    } else {
+      return new OAuth2Client($providerName, $config);
     }
   }
 
   public function __construct($providerName, $config) {
     $this->providerName = strtolower($providerName);
-    $providerClass = $this->namespace . (isset($this->mapped[$this->providerName]) ? $this->mapped[$this->providerName] : $this->providerName);
+    $providerClass = (isset($this->mapped[$this->providerName]) ? $this->namespace . $this->mapped[$this->providerName] : (array_key_exists('providerClass', $config)) ? $config['providerClass'] : $this->providerName);
     $this->provider = new $providerClass($config);
   }
 
   abstract public function getAccessToken($code);
-  
+
   public function setAccessToken(AccessToken $token) {
     $this->token = $token;
   }

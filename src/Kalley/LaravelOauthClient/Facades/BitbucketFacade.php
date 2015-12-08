@@ -9,6 +9,6 @@ class BitbucketFacade extends Facade {
    * @codeCoverageIgnore
    */
   protected static function getFacadeAccessor() {
-    return 'oauth-client.butbucket';
+    return 'oauth-client.bitbucket';
   }
 }
